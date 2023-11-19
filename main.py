@@ -1,8 +1,14 @@
 from flask import Flask,request
-import requests
 from os import system
 from threading import Thread
 import logging
+
+try :
+    import requests
+except:
+    system('pip install requests')
+    import requests
+
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 app = Flask(__name__)
